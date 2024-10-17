@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@900&display=swap");
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #E0E0E0;
+    font-family: "Overpass", sans-serif;
+}
+
+.container {
+    width: 100%;
+}
+
+.clock {
+    width: 30rem;
+    height: 30rem;
+    margin: 5rem auto;
+    padding: 1rem;
+    background-color: #333;
+    border: 2rem solid white;
+    border-radius: 25%;
+    box-shadow: 2px 0px 10px 2px #b3b3b3, 0px 0px 8px 0px black inset;
+    display: grid;
+    grid-template-rows: fit-content(100%);
+    grid-template-columns: fit-content(100%);
+    align-items: start;
+    justify-content: space-evenly;
+    grid-gap: 1rem;
+    grid-template-areas: ". year year year year ." "month month month num num num" "analog analog analog num num num" "analog analog analog day day day";
+}
+
+.clock__item {
+    border: 1px solid black;
+    box-shadow: -8px 0px 8px 0px black inset;
+}
+
+.clock__year {
+    grid-area: year;
+    font-size: 3.2rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto-fit);
+    grid-template-areas: "one two three four" "one two three four";
+}
+
+.clock__year--item {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.clock__year--01 {
+    grid-area: one;
+}
+
+.clock__year--02 {
+    grid-area: two;
+}
+
+.clock__year--03 {
+    grid-area: three;
+}
+
+.clock__year--04 {
+    grid-area: four;
+}
+
+.clock__year--05 {
+    grid-area: one;
+}
+
+.clock__year--06 {
+    grid-area: two;
+}
+
+.clock__year--07 {
+    grid-area: three;
+}
+
+.clock__year--08 {
+    grid-area: four;
+}
+
+.clock__month {
+    grid-area: month;
+    font-size: 3.2rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto-fit);
+    grid-template-areas: "one two three" "one two three";
+}
+
+.clock__month--item {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.clock__month--01 {
+    grid-area: one;
+}
+
+.clock__month--02 {
+    grid-area: two;
+}
+
+.clock__month--03 {
+    grid-area: three;
+}
+
+.clock__month--04 {
+    grid-area: one;
+}
+
+.clock__month--05 {
+    grid-area: two;
+}
+
+.clock__month--06 {
+    grid-area: three;
+}
+
+.clock__day-numbers {
+    grid-area: num;
+    font-size: 5.8rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    justify-content: flex-end;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto-fit);
+    grid-template-areas: "one two" "one two";
+}
+
+.clock__day-numbers--item {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.clock__day-numbers--01 {
+    grid-area: one;
+}
+
+.clock__day-numbers--02 {
+    grid-area: two;
+}
+
+.clock__day-numbers--03 {
+    grid-area: one;
+}
+
+.clock__day-numbers--04 {
+    grid-area: two;
+}
+
+.clock__day-letters {
+    grid-area: day;
+    font-size: 3rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transform: translate(-1rem, -2rem);
+    width: 110%;
+    background-color: green;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto-fit);
+    grid-template-areas: "one two three" "one two three";
+}
+
+.clock__day-letters--item {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.clock__day-letters--01 {
+    grid-area: one;
+}
+
+.clock__day-letters--02 {
+    grid-area: two;
+}
+
+.clock__day-letters--03 {
+    grid-area: three;
+}
+
+.clock__day-letters--04 {
+    grid-area: one;
+}
+
+.clock__day-letters--05 {
+    grid-area: two;
+}
+
+.clock__day-letters--06 {
+    grid-area: three;
+}
+
+.clock__analog {
+    grid-area: analog;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clock__analog--hours,
+.clock__analog--minutes,
+.clock__analog--seconds {
+    position: absolute;
+    top: 50%;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    box-shadow: 2px 0px 5px 0px black;
+}
+
+.clock__analog--hours {
+    width: 40%;
+    left: 10%;
+    height: 5px;
+    background-color: white;
+    border-radius: 2.5rem;
+}
+
+.clock__analog--minutes {
+    width: 45%;
+    left: 5%;
+    height: 5px;
+    background-color: white;
+    border-radius: 2.5rem;
+}
+
+.clock__analog--seconds {
+    width: 45%;
+    left: 5%;
+    height: 3px;
+    background-color: red;
+    border-radius: 2.5rem;
+}
